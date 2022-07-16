@@ -9,4 +9,4 @@ console.log(
 );
 
 // reduce take four arguments
-reduce(acumulator, currentValue)
+// reduce(acumulator, currentValue)
