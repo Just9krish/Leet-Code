@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <button class="btn">click to generate otp</button>
     <p></p>
 
-
     <script>
-      function getOpt() {
-        let opt = '';
+      // function getOpt() {
+      //   let opt = "";
 
-        
-        const digits = "0123456789";
-        for(let i= 0; i< 6; i++) {
-            opt += digits[Math.floor(Math.random() * 10)]
-            // console.log(digits[i])
-            console.log(opt)
-        }
+      //   const digits = "0123456789";
+      //   for (let i = 0; i < 6; i++) {
+      //     opt += digits[Math.floor(Math.random() * 10)];
+      //     // console.log(digits[i])
+      //     console.log(opt);
+      //   }
+      // }
 
-      }
+      // getOpt();
 
-    getOpt();
+
+
+      let person = {
+        name: "Joe",
+        displayThis1() {
+          setTimeout(function () {
+            console.log(this.name); // window.name
+          }, 0);
+        },
+        displayThis2() {
+          setTimeout(() => console.log(this.name), 0); // person.name
+        },
+        displayThis3() {
+          const f = () => console.log(this.name);
+          setTimeout(f, 0); // person.name
+        },
+      };
+
+      window.name = "My Window";
+      person.displayThis1(); // My Window
+      person.displayThis2(); // Joe
+      person.displayThis3(); // Joe
     </script>
-</body>
+  </body>
 </html>
