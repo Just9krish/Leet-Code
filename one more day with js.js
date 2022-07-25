@@ -150,3 +150,13 @@ let amit = new User('Amit', new Date(1999, 8, 26))
 
 console.log(amit.birthday)
 console.log(amit.age)
+
+// function extension
+
+// Array.prototype.hello = function() {
+//     console.log('dfd')
+// }
+
+// let arr = []
+// console.log(arr)
+// arr.hello()
