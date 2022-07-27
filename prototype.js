@@ -79,15 +79,42 @@
 // animal.sleep()
 // console.log(animal.isSleeping)
 
+// let animal = {
+//     eat:true,
+// }
+
+// let rabbit = {
+//     isFourLeg : true,
+//     __proto__: animal
+// }
+
+// console.log(Object.keys(rabbit))
+
+// for(let key in rabbit) console.log(key)
+
+// for (let key in rabbit) {
+//     let isOwn = rabbit.hasOwnProperty(key)  // imp
+    
+//     if(isOwn) {
+//         console.log(`Our property : ${key}`)
+//     } else {
+//         console.log(`Inherited : ${key}`)
+//     }
+// }
+
+
+// Working with constructor prototype
+
 let animal = {
-    eat:true,
+    eat : true,
 }
 
-let rabbit = {
-    isFourLeg : true,
-    __proto__: animal
+function Rabbit(name) {             //constructor
+    this.name = name;
 }
 
-console.log(Object.keys(rabbit))
+Rabbit.prototype = animal;
 
-for(let key in rabbit) console.log(key)
+let rabbit = new Rabbit('rohit')    // rabbit.__proto__ = animal
+
+console.log(rabbit.eat)     // true
