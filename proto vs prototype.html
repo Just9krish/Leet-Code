@@ -1,0 +1,44 @@
+<script>
+//   let cat = {
+//     breed: "munchkin",
+//   };
+
+//   let myCat = {
+//     name: "Fluffy",
+//   };
+
+//   Object.setPrototypeOf(myCat, cat);
+
+//   console.log(myCat.breed);
+
+//   console.log(myCat.__proto__);
+
+//   cat.tailLength = 15;
+//   console.log(myCat.__proto__);
+
+//   console.log(myCat.tailLength)
+
+
+
+// function Dog() {}
+
+// Dog.prototype.breed = 'Bulldog';
+
+// let myDog = new Dog();
+
+// console.log(myDog.breed);    // "Bulldog"
+// console.log(myDog.__proto__); // Object { breed: "bulldog" }
+// console.log(myDog.prototype);   //undeined
+
+// console.log(Dog.prototype);   // Object { breed: "bulldog" }
+
+function Giraffe() {}
+console.log(Giraffe.prototype)
+console.log(Giraffe.__proto__)
+
+let elephant = {}
+console.log(elephant.prototype)
+console.log(elephant.__proto__)
+
+console.log(elephant.__proto__ == Object.prototype)
+</script>
