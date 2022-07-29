@@ -1,0 +1,17 @@
+<script>
+  function Rabbit() {}
+  Rabbit.prototype = {
+    eats: true,
+  };
+
+  let rabbit = new Rabbit();
+
+  //   Rabbit.prototype = {};   // the assignment to Rabbit.prototype set up [[prototype]] for new object it does't effect the existing one
+
+  // Rabbit.prototype.eats = false;  //Objects are assigned by reference. The object from Rabbit.prototype is not duplicated, it’s still a single object referenced both by Rabbit.prototype and by the [[Prototype]] of rabbit.
+
+//   delete Rabbit.prototype;     //Here delete rabbit.eats tries to remove eats property from rabbit, but it doesn’t have it. So the operation won’t have any effect.
+  delete Rabbit.prototype.eats;    //The property eats is deleted from the prototype, it doesn’t exist any more.
+
+  console.log(rabbit.eats);
+</script>

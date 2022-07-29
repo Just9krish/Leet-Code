@@ -32,13 +32,61 @@
 
 // console.log(Dog.prototype);   // Object { breed: "bulldog" }
 
-function Giraffe() {}
-console.log(Giraffe.prototype)
-console.log(Giraffe.__proto__)
+// function Giraffe() {}
+// console.log(Giraffe.prototype)
+// console.log(Giraffe.__proto__)
 
-let elephant = {}
-console.log(elephant.prototype)
-console.log(elephant.__proto__)
+// let elephant = {}
+// console.log(elephant.prototype)
+// console.log(elephant.__proto__)
 
-console.log(elephant.__proto__ == Object.prototype)
+// console.log(elephant.__proto__ == Object.prototype)
+
+
+let animal = {
+  eats: true
+};
+
+function Rabbit(name) {
+  this.name = name;
+}
+
+Rabbit.prototype = animal;  // thsi is same as rabbit.__proto__ = animal and
+//  Object.setPrototypeOf(rabbit, animal) 
+// and over writing the whole prototype
+
+let rabbit = new Rabbit("White Rabbit"); //  rabbit.__proto__ == animal
+
+console.log(rabbit.eats ); // true, flase if over write default prototype (constructor itself)
+
+console.log(Rabbit.prototype.constructor == Rabbit) // if prototype not set then true
+
+console.log(rabbit.constructor == Rabbit)
+
+// if we have object and don't know the constructor from which it created
+// and we want to create similar object like rabbit the we can create obj 
+// with rabbit.constructor
+
+let rabbit2 = new rabbit.constructor('Black Rabbit')
+
+
+// But probably the most important thing about "constructor" is that JavaScript 
+// itself does not ensure the right "constructor" value. Yes, it exists in the 
+// default "prototype" for functions, but that’s all. What happens with it later 
+// is totally on us. In particular, if we replace the default prototype as a whole, 
+// then there will be no "constructor" in it. check Rabbit.prototype == animal on above or  bewlow
+
+// function Rabbit() {}
+// Rabbit.prototype = {
+//   jumps: true
+// };
+
+// let rabbit = new Rabbit();
+// alert(rabbit.constructor === Rabbit); 
+
+// so keep the constructor, we can add and remove property from default 'property' insted of overwrite whole
+function Rabbit() {}
+Rabbit.prototype.jump = true 
+
+
 </script>
