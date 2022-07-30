@@ -85,8 +85,25 @@ let rabbit2 = new rabbit.constructor('Black Rabbit')
 // alert(rabbit.constructor === Rabbit); 
 
 // so keep the constructor, we can add and remove property from default 'property' insted of overwrite whole
-function Rabbit() {}
-Rabbit.prototype.jump = true 
+// function Rabbit() {}
+// Rabbit.prototype.jump = true 
 
+
+
+// Another day with prototype
+
+let obj = {}
+
+// console.log(obj.__proto__ === Object.prototype)   // true
+// console.log(obj.toString === Object.prototype.toString)   // true
+// console.log(obj.toString === obj.__proto__.toString)  // true
+// console.log(null === Object.prototype.__proto__)  // true
+
+
+let arr = [1,24,5];
+
+console.log(arr.__proto__ === Array.prototype)    //true
+console.log(arr.__proto__.__proto__ === Object.prototype)   //true
+console.log(arr.__proto__.__proto__.__proto__ === null)   //true
 
 </script>
